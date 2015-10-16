@@ -12,6 +12,8 @@ if has('gui_running')
 else
     colorscheme gruvbox
 endif
+set guifont=consolas:h12
+set number
 
 " autosaving
 set autowrite
@@ -27,6 +29,8 @@ set cursorline
 set wildmenu
 set lazyredraw
 set showmatch
+set nowrap
+set nolinebreak
 
 " searching
 set incsearch
