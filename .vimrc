@@ -1,6 +1,11 @@
+" because work's setup sucks
+set runtimepath+=~/.vim
+
 " syntax
-syntax enable
+set background=dark
+syntax on
 set laststatus=2
+colorscheme solarized
 
 " autosaving
 set autowrite
