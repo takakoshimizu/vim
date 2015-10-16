@@ -1,5 +1,6 @@
-" because work's setup sucks
-set runtimepath+=~/.vim
+" because work's paths are wonky...
+source ~/.vim/autoload/pathogen.vim
+execute pathogen#infect('~/.vim/bundle/{}')
 
 " syntax
 set background=dark
