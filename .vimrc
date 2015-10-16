@@ -3,10 +3,15 @@ source ~/.vim/autoload/pathogen.vim
 execute pathogen#infect('~/.vim/bundle/{}')
 
 " syntax
+filetype plugin indent on
 set background=dark
 syntax on
 set laststatus=2
-colorscheme solarized
+if has('gui_running')
+    colorscheme solarized
+else
+    colorscheme gruvbox
+endif
 
 " autosaving
 set autowrite
