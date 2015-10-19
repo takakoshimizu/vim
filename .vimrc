@@ -48,3 +48,13 @@ set foldmethod=syntax
 " movement
 nnoremap j gj
 nnoremap k gk
+
+" tabs
+nnoremap th :tabfirst<CR>
+nnoremap tj :tabn<CR>
+nnoremap tk :tabp<CR>
+nnoremap tl :tablast<CR>
+nnoremap tt :tabe<Space>
+nnoremap tn :tabn<Space>
+nnoremap tm :tabm<Space>
+nnoremap td :tabclose<CR>
