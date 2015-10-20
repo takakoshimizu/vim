@@ -7,10 +7,11 @@ filetype plugin indent on
 set background=dark
 syntax on
 set laststatus=2
+set t_Co=256
 if has('gui_running')
     colorscheme solarized
 else
-    colorscheme gruvbox
+    colorscheme apprentice
 endif
 set guifont=consolas:h12
 set number
@@ -58,3 +59,6 @@ nnoremap tt :tabe<Space>
 nnoremap tn :tabn<Space>
 nnoremap tm :tabm<Space>
 nnoremap td :tabclose<CR>
+
+" airline
+let g:airline#extensions#tabline#enabled = 1
