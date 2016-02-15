@@ -1,5 +1,4 @@
-" because work's paths are wonky...
-source ~/.vim/autoload/pathogen.vim
+
 execute pathogen#infect('~/.vim/bundle/{}')
 
 " syntax
@@ -11,7 +10,7 @@ set t_Co=256
 if has('gui_running')
     colorscheme solarized
 else
-    colorscheme apprentice
+    colorscheme gruvbox
 endif
 set guifont=consolas:h12
 set number
