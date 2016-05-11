@@ -1,4 +1,3 @@
-
 execute pathogen#infect('~/.vim/bundle/{}')
 
 " syntax
@@ -7,11 +6,8 @@ set background=dark
 syntax on
 set laststatus=2
 set t_Co=256
-if has('gui_running')
-    colorscheme solarized
-else
-    colorscheme gruvbox
-endif
+colorscheme gruvbox
+
 set guifont=consolas:h12
 set number
 
