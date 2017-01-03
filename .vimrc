@@ -32,7 +32,6 @@ set nolinebreak
 set incsearch
 set hlsearch
 set ignorecase
-nnoremap <esc> :noh<return><esc>
 
 " code folding
 set foldenable
@@ -40,10 +39,6 @@ set foldlevelstart=10
 set foldnestmax=10
 nnoremap <space> za
 set foldmethod=syntax
-
-" movement
-nnoremap j gj
-nnoremap k gk
 
 " tabs
 nnoremap th :tabfirst<CR>
@@ -57,3 +52,12 @@ nnoremap td :tabclose<CR>
 
 " airline
 let g:airline#extensions#tabline#enabled = 1
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
