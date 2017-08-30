@@ -1,63 +1,79 @@
-execute pathogen#infect('~/.vim/bundle/{}')
+" set up Vundle
+set nocompatible
+filetype off
 
-" syntax
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin('~/.vim/plugged')
+Plugin 'ayu-theme/ayu-vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'nopik/vim-nerdtree-direnter'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'majutsushi/tagbar'
+Plugin 'tpope/vim-surround'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'jlanzarotta/bufexplorer'
+Plugin 'tpope/vim-fireplace'
+Plugin 'vim-scripts/paredit.vim'
+call vundle#end()
 filetype plugin indent on
-set background=dark
-syntax on
-set laststatus=2
-set t_Co=256
-colorscheme gruvbox
 
-set guifont=consolas:h12
-set number
+" colors
+set termguicolors
+let ayucolor="light"
+colorscheme ayu
+set colorcolumn=100
 
-" autosaving
-set autowrite
-set confirm
-
-" spaces instead of tabs
-set tabstop=4
-set softtabstop=4
+" syntax & usage
+syntax enable
+set backspace=indent,eol,start
+set tabstop=2
+set softtabstop=2
 set expandtab
 
 " UI
+set number
+set mouse=a
 set cursorline
+set showcmd
 set wildmenu
 set lazyredraw
 set showmatch
-set nowrap
-set nolinebreak
 
 " searching
 set incsearch
 set hlsearch
-set ignorecase
 
-" code folding
+" folding
 set foldenable
-set foldlevelstart=10
+set foldlevelstart=5
 set foldnestmax=10
+set foldmethod=indent
 nnoremap <space> za
-set foldmethod=syntax
 
-" tabs
-nnoremap th :tabfirst<CR>
-nnoremap tj :tabn<CR>
-nnoremap tk :tabp<CR>
-nnoremap tl :tablast<CR>
-nnoremap tt :tabe<Space>
-nnoremap tn :tabn<Space>
-nnoremap tm :tabm<Space>
-nnoremap td :tabclose<CR>
+" movement
+nnoremap j gj
+nnoremap k gk
+nnoremap <up> gk
+nnoremap <down> gj
 
-" airline
-let g:airline#extensions#tabline#enabled = 1
+"ctrlp
 
+let g:ctrlp_match_window = 'bottom,order:ttb'
+let g:ctrlp_switch_buffer = 0
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+
+" Airline
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+let g:airline_theme='solarized'
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers=['eslint']
